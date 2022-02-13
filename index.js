@@ -19,6 +19,4 @@ function hexToRgb(hex) {
     : null;
 }
 
-console.log(hexToRgb("#6c34f2"));
-
 module.exports = { hexToRgb };
