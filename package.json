@@ -1,0 +1,25 @@
+{
+  "name": "colorpedia",
+  "version": "1.0.0",
+  "description": "Package useful to everything you want to do with colors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naul-Epilef/colorpedia.git"
+  },
+  "keywords": [
+    "colors",
+    "convert",
+    "hex",
+    "rgb"
+  ],
+  "author": "naul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naul-Epilef/colorpedia/issues"
+  },
+  "homepage": "https://github.com/Naul-Epilef/colorpedia#readme"
+}
