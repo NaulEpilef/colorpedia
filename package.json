@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Naul-Epilef/colorpedia.git"
+    "url": "git+https://github.com/NaulEpilef/colorpedia.git"
   },
   "keywords": [
     "colors",
@@ -19,7 +19,10 @@
   "author": "naul",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Naul-Epilef/colorpedia/issues"
+    "url": "https://github.com/NaulEpilef/colorpedia/issues"
   },
-  "homepage": "https://github.com/Naul-Epilef/colorpedia#readme"
+  "homepage": "https://github.com/NaulEpilef/colorpedia#readme",
+  "dependencies": {
+    "colorpedia": "file:"
+  }
 }
