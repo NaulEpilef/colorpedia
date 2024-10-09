@@ -1,6 +1,6 @@
 {
   "name": "colorpedia",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Package useful to everything you want to do with colors.",
   "main": "index.js",
   "scripts": {
