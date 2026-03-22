@@ -21,18 +21,21 @@ export declare const convert: {
 export declare const clearer: {
   hex(hex: string, percentage: number): string | null;
   rgb(r: number, g: number, b: number, percentage: number): { r: number; g: number; b: number } | null;
+  rgba(r: number, g: number, b: number, a: number, percentage: number): { r: number; g: number; b: number; a: number } | null;
   hsl(h: number, s: number, l: number, percentage: number): { h: number; s: number; l: number } | null;
 };
 
 export declare const darker: {
   hex(hex: string, percentage: number): string | null;
   rgb(r: number, g: number, b: number, percentage: number): { r: number; g: number; b: number } | null;
+  rgba(r: number, g: number, b: number, a: number, percentage: number): { r: number; g: number; b: number; a: number } | null;
   hsl(h: number, s: number, l: number, percentage: number): { h: number; s: number; l: number } | null;
 };
 
 export declare const invert: {
   hex(hex: string): string | null;
-  rgb(r: number, g: number, b: number): { r: number; g: number; b: number };
+  rgb(r: number, g: number, b: number): { r: number; g: number; b: number } | null;
+  rgba(r: number, g: number, b: number, a: number): { r: number; g: number; b: number; a: number } | null;
 };
 
 export declare const lightness: {

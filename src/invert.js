@@ -11,6 +11,13 @@ function hex(hex) {
   return convert.rgbToHex(r, g, b);
 }
 
+function rgba(r, g, b, a) {
+  const result = rgb(r, g, b);
+  if (!result) return null;
+  if (isNaN(a)) return null;
+  return { ...result, a };
+}
+
 function rgb(r, g, b) {
   if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
   r = 255 - r;
@@ -22,4 +29,5 @@ function rgb(r, g, b) {
 module.exports = {
   hex,
   rgb,
+  rgba,
 };

@@ -25,6 +25,13 @@ function rgb(r, g, b, percentage) {
   return null;
 }
 
+function rgba(r, g, b, a, percentage) {
+  const result = rgb(r, g, b, percentage);
+  if (!result) return null;
+  if (isNaN(a)) return null;
+  return { ...result, a };
+}
+
 function hsl(h, s, l, percentage) {
   if (isNaN(h) || isNaN(s) || isNaN(l) || !percentage) return null;
   return { h, s, l: Math.max(0, Math.floor(l - l * (percentage / 100))) };
@@ -33,5 +40,6 @@ function hsl(h, s, l, percentage) {
 module.exports = {
   hex,
   rgb,
+  rgba,
   hsl,
 };

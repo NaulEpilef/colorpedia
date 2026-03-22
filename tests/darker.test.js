@@ -44,3 +44,15 @@ describe("darker.rgb", () => {
     expect(darker.rgb(NaN, 0, 0, 20)).toBeNull();
   });
 });
+
+describe("darker.rgba", () => {
+  test("darkens rgba values and preserves alpha", () => {
+    expect(darker.rgba(108, 52, 242, 0.5, 20)).toEqual({ r: 86, g: 41, b: 193, a: 0.5 });
+  });
+  test("returns null for NaN rgb input", () => {
+    expect(darker.rgba(NaN, 0, 0, 0.5, 20)).toBeNull();
+  });
+  test("returns null for NaN alpha", () => {
+    expect(darker.rgba(108, 52, 242, NaN, 20)).toBeNull();
+  });
+});

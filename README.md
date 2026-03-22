@@ -184,6 +184,16 @@ const lighter = clearer.hsl(258, 88, 58, 20); // { h: 258, s: 88, l: 70 }
 
 Increases the lightness channel of an HSL color by a specified percentage. More perceptually accurate than the RGB approach.
 
+- **rgba(r: number, g: number, b: number, a: number, percentage: number): { r: number, g: number, b: number, a: number } | null**
+
+```javascript
+const { clearer } = require("colorpedia");
+
+const lighter = clearer.rgba(108, 52, 242, 0.5, 20); // { r: 130, g: 63, b: 255, a: 0.5 }
+```
+
+Lightens an RGBA color by percentage (using the RGB channels), preserving the alpha value.
+
 ### 3. Darker (Darken Color)
 
 - **hex(hex: string, percentage: number): string | null**
@@ -216,6 +226,16 @@ const darker_hsl = darker.hsl(258, 88, 58, 20); // { h: 258, s: 88, l: 46 }
 
 Decreases the lightness channel of an HSL color by a specified percentage. More perceptually accurate than the RGB approach.
 
+- **rgba(r: number, g: number, b: number, a: number, percentage: number): { r: number, g: number, b: number, a: number } | null**
+
+```javascript
+const { darker } = require("colorpedia");
+
+const darkerRgba = darker.rgba(108, 52, 242, 0.5, 20); // { r: 86, g: 41, b: 193, a: 0.5 }
+```
+
+Darkens an RGBA color by percentage (using the RGB channels), preserving the alpha value.
+
 ### 4. Invert Color
 
 - **hex(hex: string): string | null**
@@ -237,6 +257,16 @@ const invertedRgb = invert.rgb(108, 52, 242); // { r: 147, g: 203, b: 13 }
 ```
 
 Inverts the RGB color values.
+
+- **rgba(r: number, g: number, b: number, a: number): { r: number, g: number, b: number, a: number } | null**
+
+```javascript
+const { invert } = require("colorpedia");
+
+const invertedRgba = invert.rgba(108, 52, 242, 0.5); // { r: 147, g: 203, b: 13, a: 0.5 }
+```
+
+Inverts the RGB channels, preserving the alpha value.
 
 ### 5. Lightness Calculation
 

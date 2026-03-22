@@ -44,3 +44,15 @@ describe("clearer.rgb", () => {
     expect(clearer.rgb(NaN, 0, 0, 20)).toBeNull();
   });
 });
+
+describe("clearer.rgba", () => {
+  test("lightens rgba values and preserves alpha", () => {
+    expect(clearer.rgba(108, 52, 242, 0.5, 20)).toEqual({ r: 130, g: 63, b: 255, a: 0.5 });
+  });
+  test("returns null for NaN rgb input", () => {
+    expect(clearer.rgba(NaN, 0, 0, 0.5, 20)).toBeNull();
+  });
+  test("returns null for NaN alpha", () => {
+    expect(clearer.rgba(108, 52, 242, NaN, 20)).toBeNull();
+  });
+});
