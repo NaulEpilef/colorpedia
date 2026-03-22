@@ -1,5 +1,9 @@
 # Colorpedia
 
+[![npm version](https://img.shields.io/npm/v/colorpedia.svg)](https://www.npmjs.com/package/colorpedia)
+[![CI](https://github.com/NaulEpilef/colorpedia/actions/workflows/ci.yml/badge.svg)](https://github.com/NaulEpilef/colorpedia/actions/workflows/ci.yml)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
 Colorpedia is a comprehensive color manipulation and conversion library for JavaScript and Node.js.
 It provides utilities to convert between color formats, adjust brightness, generate lighter or darker shades.
 
