@@ -1,7 +1,10 @@
 const convert = require("../Convert");
 
 function hex(hex) {
-  let { r, g, b } = convert.hexToRgb(hex);
+  if (!hex) return null;
+  const result = convert.hexToRgb(hex);
+  if (!result) return null;
+  let { r, g, b } = result;
   r = 255 - r;
   g = 255 - g;
   b = 255 - b;
@@ -9,6 +12,7 @@ function hex(hex) {
 }
 
 function rgb(r, g, b) {
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
   r = 255 - r;
   g = 255 - g;
   b = 255 - b;

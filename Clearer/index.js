@@ -15,7 +15,7 @@ function hex(hex, percentage) {
 }
 
 function rgb(r, g, b, percentage) {
-  if (!isNaN(r) && !isNaN(g) && !isNaN(b)) {
+  if (!isNaN(r) && !isNaN(g) && !isNaN(b) && percentage) {
     return {
       r: calcPercent(r, percentage),
       g: calcPercent(g, percentage),

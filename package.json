@@ -21,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/NaulEpilef/colorpedia/issues"
   },
-  "homepage": "https://github.com/NaulEpilef/colorpedia#readme",
-  "dependencies": {
-    "colorpedia": "file:"
-  }
+  "homepage": "https://github.com/NaulEpilef/colorpedia#readme"
 }

@@ -1,7 +1,10 @@
 const convert = require("../Convert");
 
 function hex(hex) {
-  let { r, g, b } = convert.hexToRgb(hex);
+  if (!hex) return null;
+  const result = convert.hexToRgb(hex);
+  if (!result) return null;
+  let { r, g, b } = result;
   const rgbIntArray = [parseInt(r), parseInt(g), parseInt(b)];
 
   const highest = Math.max(...rgbIntArray);
@@ -11,6 +14,7 @@ function hex(hex) {
 }
 
 function rgb(r, g, b) {
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
   const rgbIntArray = [parseInt(r), parseInt(g), parseInt(b)];
 
   const highest = Math.max(...rgbIntArray);
