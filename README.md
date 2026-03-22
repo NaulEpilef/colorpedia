@@ -174,6 +174,16 @@ const lighter = clearer.rgb(108, 52, 242, 20); // { r: 130, g: 63, b: 255 }
 
 Generates a lighter shade of the given RGB color by a specified percentage.
 
+- **hsl(h: number, s: number, l: number, percentage: number): { h: number, s: number, l: number } | null**
+
+```javascript
+const { clearer } = require("colorpedia");
+
+const lighter = clearer.hsl(258, 88, 58, 20); // { h: 258, s: 88, l: 70 }
+```
+
+Increases the lightness channel of an HSL color by a specified percentage. More perceptually accurate than the RGB approach.
+
 ### 3. Darker (Darken Color)
 
 - **hex(hex: string, percentage: number): string | null**
@@ -195,6 +205,16 @@ const darkerRgb = darker.rgb(108, 52, 242, 20); // { r: 86, g: 41, b: 193 }
 ```
 
 Generates a darker shade of the given RGB color by a specified percentage.
+
+- **hsl(h: number, s: number, l: number, percentage: number): { h: number, s: number, l: number } | null**
+
+```javascript
+const { darker } = require("colorpedia");
+
+const darker_hsl = darker.hsl(258, 88, 58, 20); // { h: 258, s: 88, l: 46 }
+```
+
+Decreases the lightness channel of an HSL color by a specified percentage. More perceptually accurate than the RGB approach.
 
 ### 4. Invert Color
 

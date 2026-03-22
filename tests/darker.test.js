@@ -15,6 +15,26 @@ describe("darker.hex", () => {
   });
 });
 
+describe("darker.hsl", () => {
+  test("decreases lightness by percentage", () => {
+    expect(darker.hsl(258, 88, 58, 20)).toEqual({ h: 258, s: 88, l: 46 });
+  });
+  test("floors lightness at 0", () => {
+    expect(darker.hsl(258, 88, 0, 20)).toEqual({ h: 258, s: 88, l: 0 });
+  });
+  test("preserves hue and saturation", () => {
+    const result = darker.hsl(180, 50, 60, 25);
+    expect(result.h).toBe(180);
+    expect(result.s).toBe(50);
+  });
+  test("returns null for zero percentage", () => {
+    expect(darker.hsl(258, 88, 58, 0)).toBeNull();
+  });
+  test("returns null for NaN input", () => {
+    expect(darker.hsl(NaN, 88, 58, 20)).toBeNull();
+  });
+});
+
 describe("darker.rgb", () => {
   test("darkens rgb values", () => {
     const result = darker.rgb(108, 52, 242, 20);
