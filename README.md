@@ -13,12 +13,12 @@ It provides utilities to convert between color formats, adjust brightness, gener
 - [Features](#features)
 - [Usage/Examples](#usageexamples)
   - [1. Convert Functions](#1-convert-functions)
-    - [HEX ↔ RGB](#hex--rgb)
-    - [HEX ↔ HSL](#hex--hsl)
-    - [HEX ↔ RGBA](#hex--rgba)
-    - [RGB ↔ HSL](#rgb--hsl)
-    - [RGB ↔ RGBA](#rgb--rgba)
-    - [HSL ↔ RGBA](#hsl--rgba)
+    - [HEX and RGB](#hex-and-rgb)
+    - [HEX and HSL](#hex-and-hsl)
+    - [HEX and RGBA](#hex-and-rgba)
+    - [RGB and HSL](#rgb-and-hsl)
+    - [RGB and RGBA](#rgb-and-rgba)
+    - [HSL and RGBA](#hsl-and-rgba)
   - [2. Clearer (Lighten Color)](#2-clearer-lighten-color)
   - [3. Darker (Darken Color)](#3-darker-darken-color)
   - [4. Invert Color](#4-invert-color)
@@ -50,7 +50,7 @@ yarn add colorpedia
 
 ### 1. Convert Functions
 
-#### HEX ↔ RGB
+#### HEX and RGB
 
 - **hexToRgb(hex: string): { r: number, g: number, b: number } | null**
 
@@ -72,7 +72,7 @@ const hex = convert.rgbToHex(108, 52, 242); // "#6c34f2"
 
 Converts an RGB color to a hexadecimal string.
 
-#### HEX ↔ HSL
+#### HEX and HSL
 
 - **hexToHsl(hex: string): { h: number, s: number, l: number } | null**
 
@@ -94,7 +94,7 @@ const hex = convert.hslToHex(258, 88, 58); // "#6e36f2"
 
 Converts an HSL color to a hexadecimal string.
 
-#### HEX ↔ RGBA
+#### HEX and RGBA
 
 - **hexToRgba(hex: string): { r: number, g: number, b: number, a: number } | null**
 
@@ -116,7 +116,7 @@ const hex = convert.rgbaToHex(108, 52, 242, 0.5); // "#6c34f280"
 
 Converts RGBA values to an 8-digit HEX string. Alpha defaults to `1` if omitted.
 
-#### RGB ↔ HSL
+#### RGB and HSL
 
 - **rgbToHsl(r: number, g: number, b: number): { h: number, s: number, l: number } | null**
 
@@ -138,7 +138,7 @@ const { r, g, b } = convert.hslToRgb(258, 88, 58); // { r: 110, g: 54, b: 242 }
 
 Converts an HSL color to an RGB object.
 
-#### RGB ↔ RGBA
+#### RGB and RGBA
 
 - **rgbaToRgb(r: number, g: number, b: number, a?: number): { r: number, g: number, b: number } | null**
 
@@ -150,7 +150,7 @@ const rgb = convert.rgbaToRgb(108, 52, 242, 0.5); // { r: 108, g: 52, b: 242 }
 
 Strips the alpha channel from an RGBA color, returning a plain RGB object.
 
-#### HSL ↔ RGBA
+#### HSL and RGBA
 
 - **rgbaToHsl(r: number, g: number, b: number, a?: number): { h: number, s: number, l: number } | null**
 

@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-03-22
+
+### Fixed
+- Replace Unicode arrows in README headings to fix rendering on npm package page
+
 ## [1.1.0] - 2026-03-22
 
 ### Added
