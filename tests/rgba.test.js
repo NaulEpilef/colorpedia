@@ -36,3 +36,45 @@ describe("convert.rgbaToHex", () => {
     expect(convert.rgbaToHex(108, 52, 242, NaN)).toBeNull();
   });
 });
+
+describe("convert.rgbaToRgb", () => {
+  test("strips alpha channel", () => {
+    expect(convert.rgbaToRgb(108, 52, 242, 0.5)).toEqual({ r: 108, g: 52, b: 242 });
+  });
+  test("works without alpha argument", () => {
+    expect(convert.rgbaToRgb(108, 52, 242)).toEqual({ r: 108, g: 52, b: 242 });
+  });
+  test("returns null for NaN input", () => {
+    expect(convert.rgbaToRgb(NaN, 0, 0)).toBeNull();
+  });
+  test("returns null for NaN alpha", () => {
+    expect(convert.rgbaToRgb(108, 52, 242, NaN)).toBeNull();
+  });
+});
+
+describe("convert.rgbaToHsl", () => {
+  test("converts rgba to hsl ignoring alpha", () => {
+    expect(convert.rgbaToHsl(108, 52, 242, 0.5)).toEqual({ h: 258, s: 88, l: 58 });
+  });
+  test("works without alpha argument", () => {
+    expect(convert.rgbaToHsl(108, 52, 242)).toEqual({ h: 258, s: 88, l: 58 });
+  });
+  test("returns null for NaN input", () => {
+    expect(convert.rgbaToHsl(NaN, 0, 0)).toBeNull();
+  });
+});
+
+describe("convert.hslToRgba", () => {
+  test("converts hsl to rgba with default alpha 1", () => {
+    expect(convert.hslToRgba(258, 88, 58)).toEqual({ r: 110, g: 54, b: 242, a: 1 });
+  });
+  test("converts hsl to rgba with explicit alpha", () => {
+    expect(convert.hslToRgba(258, 88, 58, 0.5)).toEqual({ r: 110, g: 54, b: 242, a: 0.5 });
+  });
+  test("returns null for NaN input", () => {
+    expect(convert.hslToRgba(NaN, 0, 0)).toBeNull();
+  });
+  test("returns null for NaN alpha", () => {
+    expect(convert.hslToRgba(258, 88, 58, NaN)).toBeNull();
+  });
+});

@@ -30,6 +30,8 @@ yarn add colorpedia
 
 ### 1. Convert Functions
 
+#### HEX ↔ RGB
+
 - **hexToRgb(hex: string): { r: number, g: number, b: number } | null**
 
 ```javascript
@@ -50,25 +52,7 @@ const hex = convert.rgbToHex(108, 52, 242); // "#6c34f2"
 
 Converts an RGB color to a hexadecimal string.
 
-- **rgbToHsl(r: number, g: number, b: number): { h: number, s: number, l: number } | null**
-
-```javascript
-const { convert } = require("colorpedia");
-
-const { h, s, l } = convert.rgbToHsl(108, 52, 242); // { h: 258, s: 88, l: 58 }
-```
-
-Converts an RGB color to an HSL object (hue 0–360, saturation 0–100, lightness 0–100).
-
-- **hslToRgb(h: number, s: number, l: number): { r: number, g: number, b: number } | null**
-
-```javascript
-const { convert } = require("colorpedia");
-
-const { r, g, b } = convert.hslToRgb(258, 88, 58); // { r: 110, g: 54, b: 242 }
-```
-
-Converts an HSL color to an RGB object.
+#### HEX ↔ HSL
 
 - **hexToHsl(hex: string): { h: number, s: number, l: number } | null**
 
@@ -78,7 +62,7 @@ const { convert } = require("colorpedia");
 const { h, s, l } = convert.hexToHsl("#6c34f2"); // { h: 258, s: 88, l: 58 }
 ```
 
-Converts a hexadecimal color to an HSL object.
+Converts a hexadecimal color to an HSL object (hue 0–360, saturation 0–100, lightness 0–100).
 
 - **hslToHex(h: number, s: number, l: number): string | null**
 
@@ -89,6 +73,8 @@ const hex = convert.hslToHex(258, 88, 58); // "#6e36f2"
 ```
 
 Converts an HSL color to a hexadecimal string.
+
+#### HEX ↔ RGBA
 
 - **hexToRgba(hex: string): { r: number, g: number, b: number, a: number } | null**
 
@@ -109,6 +95,62 @@ const hex = convert.rgbaToHex(108, 52, 242, 0.5); // "#6c34f280"
 ```
 
 Converts RGBA values to an 8-digit HEX string. Alpha defaults to `1` if omitted.
+
+#### RGB ↔ HSL
+
+- **rgbToHsl(r: number, g: number, b: number): { h: number, s: number, l: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const { h, s, l } = convert.rgbToHsl(108, 52, 242); // { h: 258, s: 88, l: 58 }
+```
+
+Converts an RGB color to an HSL object.
+
+- **hslToRgb(h: number, s: number, l: number): { r: number, g: number, b: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const { r, g, b } = convert.hslToRgb(258, 88, 58); // { r: 110, g: 54, b: 242 }
+```
+
+Converts an HSL color to an RGB object.
+
+#### RGB ↔ RGBA
+
+- **rgbaToRgb(r: number, g: number, b: number, a?: number): { r: number, g: number, b: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const rgb = convert.rgbaToRgb(108, 52, 242, 0.5); // { r: 108, g: 52, b: 242 }
+```
+
+Strips the alpha channel from an RGBA color, returning a plain RGB object.
+
+#### HSL ↔ RGBA
+
+- **rgbaToHsl(r: number, g: number, b: number, a?: number): { h: number, s: number, l: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const hsl = convert.rgbaToHsl(108, 52, 242, 0.5); // { h: 258, s: 88, l: 58 }
+```
+
+Converts an RGBA color to HSL, ignoring the alpha channel.
+
+- **hslToRgba(h: number, s: number, l: number, a?: number): { r: number, g: number, b: number, a: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const rgba = convert.hslToRgba(258, 88, 58, 0.5); // { r: 110, g: 54, b: 242, a: 0.5 }
+```
+
+Converts an HSL color to RGBA. Alpha defaults to `1` if omitted.
 
 ### 2. Clearer (Lighten Color)
 

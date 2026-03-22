@@ -140,13 +140,42 @@ function rgbaToHex(r, g, b, a) {
   );
 }
 
+function rgbaToRgb(r, g, b, a) {
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+  if (a !== undefined && isNaN(a)) return null;
+  return { r, g, b };
+}
+
+function rgbaToHsl(r, g, b, a) {
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+  if (a !== undefined && isNaN(a)) return null;
+  return rgbToHsl(r, g, b);
+}
+
+function hslToRgba(h, s, l, a) {
+  const rgb = hslToRgb(h, s, l);
+  if (!rgb) return null;
+  const alpha = a === undefined ? 1 : a;
+  if (isNaN(alpha)) return null;
+  return { ...rgb, a: alpha };
+}
+
 module.exports = {
+  // HEX <-> RGB
   hexToRgb,
   rgbToHex,
-  rgbToHsl,
-  hslToRgb,
+  // HEX <-> HSL
   hexToHsl,
   hslToHex,
+  // HEX <-> RGBA
   hexToRgba,
   rgbaToHex,
+  // RGB <-> HSL
+  rgbToHsl,
+  hslToRgb,
+  // RGB <-> RGBA
+  rgbaToRgb,
+  // HSL <-> RGBA
+  rgbaToHsl,
+  hslToRgba,
 };

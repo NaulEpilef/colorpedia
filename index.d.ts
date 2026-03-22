@@ -1,12 +1,21 @@
 export declare const convert: {
+  // HEX <-> RGB
   hexToRgb(hex: string): { r: number; g: number; b: number } | null;
   rgbToHex(r: number, g: number, b: number): string | null;
-  rgbToHsl(r: number, g: number, b: number): { h: number; s: number; l: number } | null;
-  hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: number } | null;
+  // HEX <-> HSL
   hexToHsl(hex: string): { h: number; s: number; l: number } | null;
   hslToHex(h: number, s: number, l: number): string | null;
+  // HEX <-> RGBA
   hexToRgba(hex: string): { r: number; g: number; b: number; a: number } | null;
   rgbaToHex(r: number, g: number, b: number, a?: number): string | null;
+  // RGB <-> HSL
+  rgbToHsl(r: number, g: number, b: number): { h: number; s: number; l: number } | null;
+  hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: number } | null;
+  // RGB <-> RGBA
+  rgbaToRgb(r: number, g: number, b: number, a?: number): { r: number; g: number; b: number } | null;
+  // HSL <-> RGBA
+  rgbaToHsl(r: number, g: number, b: number, a?: number): { h: number; s: number; l: number } | null;
+  hslToRgba(h: number, s: number, l: number, a?: number): { r: number; g: number; b: number; a: number } | null;
 };
 
 export declare const clearer: {
