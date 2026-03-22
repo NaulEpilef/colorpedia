@@ -29,7 +29,7 @@ yarn add colorpedia
 - **hexToRgb(hex: string): { r: number, g: number, b: number } | null**
 
 ```javascript
-import { convert } from "colorpedia";
+const { convert } = require("colorpedia");
 
 const { r, g, b } = convert.hexToRgb("#6c34f2"); // { r: 108, g: 52, b: 242 }
 ```
@@ -39,7 +39,7 @@ Converts a hexadecimal color to an RGB object.
 - **rgbToHex(r: number, g: number, b: number): string | null**
 
 ```javascript
-import { convert } from "colorpedia";
+const { convert } = require("colorpedia");
 
 const hex = convert.rgbToHex(108, 52, 242); // "#6c34f2"
 ```
@@ -51,48 +51,88 @@ Converts an RGB color to a hexadecimal string.
 - **hex(hex: string, percentage: number): string | null**
 
 ```javascript
-import { clearer } from "colorpedia";
+const { clearer } = require("colorpedia");
 
 const lighterHex = clearer.hex("#6c34f2", 20); // "#823fff"
 ```
 
-Generates a lighter shade of the given color by a specified percentage.
+Generates a lighter shade of the given HEX color by a specified percentage.
+
+- **rgb(r: number, g: number, b: number, percentage: number): { r: number, g: number, b: number } | null**
+
+```javascript
+const { clearer } = require("colorpedia");
+
+const lighter = clearer.rgb(108, 52, 242, 20); // { r: 130, g: 63, b: 255 }
+```
+
+Generates a lighter shade of the given RGB color by a specified percentage.
 
 ### 3. Darker (Darken Color)
 
 - **hex(hex: string, percentage: number): string | null**
 
 ```javascript
-import { darker } from "colorpedia";
+const { darker } = require("colorpedia");
 
 const darkerHex = darker.hex("#6c34f2", 20); // "#5629c1"
 ```
 
-Generates a darker shade of the given color by a specified percentage.
+Generates a darker shade of the given HEX color by a specified percentage.
+
+- **rgb(r: number, g: number, b: number, percentage: number): { r: number, g: number, b: number } | null**
+
+```javascript
+const { darker } = require("colorpedia");
+
+const darkerRgb = darker.rgb(108, 52, 242, 20); // { r: 86, g: 41, b: 193 }
+```
+
+Generates a darker shade of the given RGB color by a specified percentage.
 
 ### 4. Invert Color
 
 - **hex(hex: string): string | null**
 
 ```javascript
-import { invert } from "colorpedia";
+const { invert } = require("colorpedia");
 
 const invertedHex = invert.hex("#6c34f2"); // "#93cb0d"
 ```
 
 Inverts the color to its complementary shade.
 
+- **rgb(r: number, g: number, b: number): { r: number, g: number, b: number } | null**
+
+```javascript
+const { invert } = require("colorpedia");
+
+const invertedRgb = invert.rgb(108, 52, 242); // { r: 147, g: 203, b: 13 }
+```
+
+Inverts the RGB color values.
+
 ### 5. Lightness Calculation
 
 - **hex(hex: string): number | null**
 
 ```javascript
-import { lightness } from "colorpedia";
+const { lightness } = require("colorpedia");
 
 const lightnessValue = lightness.hex("#6c34f2"); // 0.58
 ```
 
-Calculates the lightness level of the color.
+Calculates the lightness level of the color (0 = darkest, 1 = lightest).
+
+- **rgb(r: number, g: number, b: number): number | null**
+
+```javascript
+const { lightness } = require("colorpedia");
+
+const lightnessValue = lightness.rgb(108, 52, 242); // 0.58
+```
+
+Calculates the lightness level of an RGB color (0 = darkest, 1 = lightest).
 
 ## Contributing
 

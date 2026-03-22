@@ -4,6 +4,11 @@
   "description": "Package useful to everything you want to do with colors.",
   "main": "index.js",
   "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "src/"
+  ],
   "scripts": {
     "test": "jest"
   },
