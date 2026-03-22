@@ -90,6 +90,26 @@ const hex = convert.hslToHex(258, 88, 58); // "#6e36f2"
 
 Converts an HSL color to a hexadecimal string.
 
+- **hexToRgba(hex: string): { r: number, g: number, b: number, a: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const { r, g, b, a } = convert.hexToRgba("#6c34f280"); // { r: 108, g: 52, b: 242, a: 0.5 }
+```
+
+Converts an 8-digit HEX color (with alpha) to an RGBA object. Falls back to `a: 1` for standard 6-digit HEX.
+
+- **rgbaToHex(r: number, g: number, b: number, a?: number): string | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const hex = convert.rgbaToHex(108, 52, 242, 0.5); // "#6c34f280"
+```
+
+Converts RGBA values to an 8-digit HEX string. Alpha defaults to `1` if omitted.
+
 ### 2. Clearer (Lighten Color)
 
 - **hex(hex: string, percentage: number): string | null**

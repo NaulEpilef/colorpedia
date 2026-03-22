@@ -5,6 +5,8 @@ export declare const convert: {
   hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: number } | null;
   hexToHsl(hex: string): { h: number; s: number; l: number } | null;
   hslToHex(h: number, s: number, l: number): string | null;
+  hexToRgba(hex: string): { r: number; g: number; b: number; a: number } | null;
+  rgbaToHex(r: number, g: number, b: number, a?: number): string | null;
 };
 
 export declare const clearer: {

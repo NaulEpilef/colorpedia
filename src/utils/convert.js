@@ -109,6 +109,37 @@ function hslToHex(h, s, l) {
   return rgbToHex(rgb.r, rgb.g, rgb.b);
 }
 
+var rgbaFullRegex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+
+function hexToRgba(hex) {
+  hex = String(hex);
+  const result8 = rgbaFullRegex.exec(hex);
+  if (result8) {
+    return {
+      r: parseInt(result8[1], 16),
+      g: parseInt(result8[2], 16),
+      b: parseInt(result8[3], 16),
+      a: Math.round((parseInt(result8[4], 16) / 255) * 100) / 100,
+    };
+  }
+  const rgb = hexToRgb(hex);
+  if (!rgb) return null;
+  return { ...rgb, a: 1 };
+}
+
+function rgbaToHex(r, g, b, a) {
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+  const alpha = a === undefined ? 1 : a;
+  if (isNaN(alpha)) return null;
+  return (
+    "#" +
+    decimalToHex(r) +
+    decimalToHex(g) +
+    decimalToHex(b) +
+    decimalToHex(Math.round(alpha * 255))
+  );
+}
+
 module.exports = {
   hexToRgb,
   rgbToHex,
@@ -116,4 +147,6 @@ module.exports = {
   hslToRgb,
   hexToHsl,
   hslToHex,
+  hexToRgba,
+  rgbaToHex,
 };
