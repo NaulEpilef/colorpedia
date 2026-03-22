@@ -3,6 +3,7 @@
   "version": "1.0.5",
   "description": "Package useful to everything you want to do with colors.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
