@@ -1,8 +1,8 @@
-const clearer = require("./Clearer");
-const convert = require("./Convert");
-const darker = require("./Darker");
-const invert = require("./Invert");
-const lightness = require("./Lightness");
+const clearer = require("./src/clearer");
+const convert = require("./src/utils/convert");
+const darker = require("./src/darker");
+const invert = require("./src/invert");
+const lightness = require("./src/lightness");
 
 const colorpedia = { clearer, convert, darker, invert, lightness };
 

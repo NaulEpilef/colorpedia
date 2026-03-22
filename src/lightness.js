@@ -1,4 +1,4 @@
-const convert = require("../Convert");
+const convert = require("./utils/convert");
 
 function hex(hex) {
   if (!hex) return null;

@@ -1,4 +1,4 @@
-const convert = require("../Convert");
+const convert = require("./utils/convert");
 
 function calcPercent(value, percentage) {
   return Math.max(0, Math.floor(value - value * (percentage / 100)));
