@@ -50,6 +50,46 @@ const hex = convert.rgbToHex(108, 52, 242); // "#6c34f2"
 
 Converts an RGB color to a hexadecimal string.
 
+- **rgbToHsl(r: number, g: number, b: number): { h: number, s: number, l: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const { h, s, l } = convert.rgbToHsl(108, 52, 242); // { h: 258, s: 88, l: 58 }
+```
+
+Converts an RGB color to an HSL object (hue 0–360, saturation 0–100, lightness 0–100).
+
+- **hslToRgb(h: number, s: number, l: number): { r: number, g: number, b: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const { r, g, b } = convert.hslToRgb(258, 88, 58); // { r: 110, g: 54, b: 242 }
+```
+
+Converts an HSL color to an RGB object.
+
+- **hexToHsl(hex: string): { h: number, s: number, l: number } | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const { h, s, l } = convert.hexToHsl("#6c34f2"); // { h: 258, s: 88, l: 58 }
+```
+
+Converts a hexadecimal color to an HSL object.
+
+- **hslToHex(h: number, s: number, l: number): string | null**
+
+```javascript
+const { convert } = require("colorpedia");
+
+const hex = convert.hslToHex(258, 88, 58); // "#6e36f2"
+```
+
+Converts an HSL color to a hexadecimal string.
+
 ### 2. Clearer (Lighten Color)
 
 - **hex(hex: string, percentage: number): string | null**

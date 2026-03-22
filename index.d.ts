@@ -1,6 +1,10 @@
 export declare const convert: {
   hexToRgb(hex: string): { r: number; g: number; b: number } | null;
   rgbToHex(r: number, g: number, b: number): string | null;
+  rgbToHsl(r: number, g: number, b: number): { h: number; s: number; l: number } | null;
+  hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: number } | null;
+  hexToHsl(hex: string): { h: number; s: number; l: number } | null;
+  hslToHex(h: number, s: number, l: number): string | null;
 };
 
 export declare const clearer: {
