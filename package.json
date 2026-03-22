@@ -1,6 +1,6 @@
 {
   "name": "colorpedia",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Package useful to everything you want to do with colors.",
   "main": "index.js",
   "exports": {
@@ -29,9 +29,12 @@
   },
   "keywords": [
     "colors",
+    "color-manipulation",
     "convert",
     "hex",
-    "rgb"
+    "rgb",
+    "hsl",
+    "rgba"
   ],
   "author": "naul",
   "license": "MIT",

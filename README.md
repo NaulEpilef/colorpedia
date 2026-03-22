@@ -7,6 +7,26 @@
 Colorpedia is a comprehensive color manipulation and conversion library for JavaScript and Node.js.
 It provides utilities to convert between color formats, adjust brightness, generate lighter or darker shades.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Features](#features)
+- [Usage/Examples](#usageexamples)
+  - [1. Convert Functions](#1-convert-functions)
+    - [HEX ↔ RGB](#hex--rgb)
+    - [HEX ↔ HSL](#hex--hsl)
+    - [HEX ↔ RGBA](#hex--rgba)
+    - [RGB ↔ HSL](#rgb--hsl)
+    - [RGB ↔ RGBA](#rgb--rgba)
+    - [HSL ↔ RGBA](#hsl--rgba)
+  - [2. Clearer (Lighten Color)](#2-clearer-lighten-color)
+  - [3. Darker (Darken Color)](#3-darker-darken-color)
+  - [4. Invert Color](#4-invert-color)
+  - [5. Lightness Calculation](#5-lightness-calculation)
+  - [6. Mix Colors](#6-mix-colors)
+- [Contributing](#contributing)
+- [Support](#support)
+
 ## Installation
 
 Install Colorpedia using npm or yarn:
