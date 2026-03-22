@@ -28,3 +28,8 @@ export declare const lightness: {
   hex(hex: string): number | null;
   rgb(r: number, g: number, b: number): number | null;
 };
+
+export declare const mix: {
+  hex(hex1: string, hex2: string, weight?: number): string | null;
+  rgb(r1: number, g1: number, b1: number, r2: number, g2: number, b2: number, weight?: number): { r: number; g: number; b: number } | null;
+};

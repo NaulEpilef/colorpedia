@@ -198,6 +198,29 @@ const lightnessValue = lightness.rgb(108, 52, 242); // 0.58
 
 Calculates the lightness level of an RGB color (0 = darkest, 1 = lightest).
 
+### 6. Mix Colors
+
+- **hex(hex1: string, hex2: string, weight?: number): string | null**
+
+```javascript
+const { mix } = require("colorpedia");
+
+const mixed = mix.hex("#000000", "#ffffff");      // "#808080" (50/50)
+const mixed = mix.hex("#ff0000", "#0000ff", 0.2); // 20% towards blue
+```
+
+Blends two HEX colors. `weight` (0–1) controls the balance towards the second color. Defaults to `0.5`.
+
+- **rgb(r1, g1, b1, r2, g2, b2, weight?: number): { r: number, g: number, b: number } | null**
+
+```javascript
+const { mix } = require("colorpedia");
+
+const mixed = mix.rgb(255, 0, 0, 0, 0, 255, 0.5); // { r: 128, g: 0, b: 128 }
+```
+
+Blends two RGB colors. `weight` defaults to `0.5`.
+
 ## Contributing
 
 We welcome contributions to Colorpedia! Here's how you can help:
