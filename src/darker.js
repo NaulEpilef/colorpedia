@@ -1,4 +1,4 @@
-const convert = require("../Convert");
+const convert = require("./utils/convert");
 
 function calcPercent(value, percentage) {
   return Math.max(0, Math.floor(value - value * (percentage / 100)));
@@ -15,7 +15,7 @@ function hex(hex, percentage) {
 }
 
 function rgb(r, g, b, percentage) {
-  if (!isNaN(r) && !isNaN(g) && !isNaN(b)) {
+  if (!isNaN(r) && !isNaN(g) && !isNaN(b) && percentage) {
     return {
       r: calcPercent(r, percentage),
       g: calcPercent(g, percentage),
@@ -25,7 +25,21 @@ function rgb(r, g, b, percentage) {
   return null;
 }
 
+function rgba(r, g, b, a, percentage) {
+  const result = rgb(r, g, b, percentage);
+  if (!result) return null;
+  if (isNaN(a)) return null;
+  return { ...result, a };
+}
+
+function hsl(h, s, l, percentage) {
+  if (isNaN(h) || isNaN(s) || isNaN(l) || !percentage) return null;
+  return { h, s, l: Math.max(0, Math.floor(l - l * (percentage / 100))) };
+}
+
 module.exports = {
   hex,
   rgb,
+  rgba,
+  hsl,
 };
