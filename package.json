@@ -3,6 +3,12 @@
   "version": "1.0.5",
   "description": "Package useful to everything you want to do with colors.",
   "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "default": "./index.js"
+    }
+  },
   "types": "index.d.ts",
   "files": [
     "index.js",
@@ -28,7 +34,7 @@
     "rgb"
   ],
   "author": "naul",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/NaulEpilef/colorpedia/issues"
   },
